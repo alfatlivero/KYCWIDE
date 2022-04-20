@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "sdkDemo"
+  s.name         = "KYCWIDE"
   s.version      = "0.0.1"
   s.summary      = "A short description of sdkDemo."
 

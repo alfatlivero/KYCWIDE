@@ -4,10 +4,11 @@
 target 'sdkDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  
 
   # Pods for sdkDemo
     pod 'SwiftyJSON'
     pod 'SVProgressHUD'
-    pod 'GoogleMLKit/TextRecognition', '2.2.0'
-    pod 'GoogleMLKit/FaceDetection'
+    #pod 'GoogleMLKit/TextRecognition', '2.2.0'
+    #pod 'GoogleMLKit/FaceDetection'
 end
