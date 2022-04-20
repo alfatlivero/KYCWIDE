@@ -1,0 +1,11 @@
+framework module widekyc {
+  umbrella header "widekyc.h"
+
+  export *
+  module * { export * }
+}
+
+module widekyc.Swift {
+    header "widekyc-Swift.h"
+    requires objc
+}

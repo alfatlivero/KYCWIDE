@@ -1,0 +1,234 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name widekyc
+import AVFoundation
+import Accelerate
+import CoreMedia
+import CoreVideo
+import Foundation
+import MLKit
+import NaturalLanguage
+import Swift
+import SwiftyJSON
+import UIKit
+import Vision
+import VisionKit
+import _Concurrency
+@_exported import widekyc
+@objc @_inheritsConvenienceInitializers public class ConfigManager : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  public func saveLang(Lang: Swift.String)
+  public func saveClientGeneral(dataGeneral: Foundation.NSDictionary)
+  public func saveClientLang(dataLang: Foundation.NSDictionary)
+  public func getLang() -> Swift.String
+  public func getClientGeneral() -> Foundation.NSDictionary
+  public func getClientLang() -> Foundation.NSDictionary
+  public func removeClientGeneral()
+  public func removeClientLang()
+  public func removeLang()
+  @objc deinit
+}
+public struct Pixel {
+  public var value: Swift.UInt32
+  public var red: Swift.UInt8 {
+    get
+    set
+  }
+  public var green: Swift.UInt8 {
+    get
+    set
+  }
+  public var blue: Swift.UInt8 {
+    get
+    set
+  }
+  public var alpha: Swift.UInt8 {
+    get
+    set
+  }
+}
+@objc @_inheritsConvenienceInitializers public class ConfigConstant : ObjectiveC.NSObject {
+  public static var PREF_CLIENT_CONFIG_KEY: Swift.String
+  public static var VAL_CLIENT_CONFIG: Swift.String
+  public static var GENERAL: Swift.String
+  public static var GENERAL_COLOR: Swift.String
+  public static var GENERAL_IMAGE: Swift.String
+  public static var LANG: Swift.String
+  public static var LANG_EN: Swift.String
+  public static var LANG_ID: Swift.String
+  public static var COLOR_TITLE_BAR: Swift.String
+  public static var COLOR_TITLE_TEXT: Swift.String
+  public static var COLOR_TITLE_BUTTON: Swift.String
+  public static var COLOR_LIVENESS_INSTRUCTION: Swift.String
+  public static var COLOR_ID_RECOGNIZE_INSTRUCTION: Swift.String
+  public static var COLOR_ID_VALIDATION_LABEL: Swift.String
+  public static var COLOR_ID_VALIDATION_BUTTON: Swift.String
+  public static var COLOR_ID_VALIDATION_BUTTON_TEXT: Swift.String
+  public static var COLOR_ERROR_POPUP_TEXT: Swift.String
+  public static var COLOR_ERROR_POPUP_BUTTON_TEXT: Swift.String
+  public static var IMAGE_TITLE_BAR_BACK: Swift.String
+  public static var IMAGE_TITLE_BAR_FLASH_ACTIVE: Swift.String
+  public static var IMAGE_TITLE_BAR_FLASH_INACTIVE: Swift.String
+  public static var LANG_LIVENESS_ANTI_SPOOF_ERROR_MESSAGE: Swift.String
+  public static var LANG_LIVENESS_BRIGHTNESS_ERROR_MESSAGE: Swift.String
+  public static var LANG_LIVENESS_TITLE: Swift.String
+  public static var LANG_LIVENESS_INSTRUCTION: Swift.String
+  public static var LANG_LIVENESS_INSTRUCTION_CONT: Swift.String
+  public static var LANG_LIVENESS_ERROR_MESSAGE: Swift.String
+  public static var LANG_ID_RECOGNIZE_TITLE: Swift.String
+  public static var LANG_ID_RECOGNIZE_INSTRUCTION: Swift.String
+  public static var LANG_ID_RECOGNIZE_ERROR_MESSAGE: Swift.String
+  public static var LANG_ID_RECOGNIZE_ERROR_COPIED_MESSAGE: Swift.String
+  public static var LANG_ID_VALIDATION_TITLE: Swift.String
+  public static var LANG_ID_VALIDATION_NIK: Swift.String
+  public static var LANG_ID_VALIDATION_NAME: Swift.String
+  public static var LANG_ID_VALIDATION_BIRTHDATE: Swift.String
+  public static var LANG_ID_VALIDATION_BIRTHPLACE: Swift.String
+  public static var LANG_ID_VALIDATION_ADDRESS: Swift.String
+  public static var LANG_ID_VALIDATION_SELFIE: Swift.String
+  public static var LANG_ID_VALIDATION_BUTTON_SELFIE: Swift.String
+  public static var LANG_ID_VALIDATION_BUTTON_SEND_DATA: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIKit.UIColor {
+  convenience public init(hexString: Swift.String, alpha: CoreGraphics.CGFloat = 1.0)
+  public func toHexString() -> Swift.String
+  public var coreImageColor: CoreImage.CIColor {
+    get
+  }
+  public var components: (red: CoreGraphics.CGFloat, green: CoreGraphics.CGFloat, blue: CoreGraphics.CGFloat, alpha: CoreGraphics.CGFloat) {
+    get
+  }
+  public func hexStringFromUIColor(color: UIKit.UIColor) -> Swift.String
+  public func isDistinct(compareColor: UIKit.UIColor) -> Swift.Bool
+  public func color(withMinimumSaturation minSaturation: CoreGraphics.CGFloat) -> UIKit.UIColor
+  public func isBlackOrWhite() -> Swift.Bool
+  public func isContrastingColor(color: UIKit.UIColor) -> Swift.Bool
+}
+@objc @_inheritsConvenienceInitializers public class WKYCCallback : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias wkycCallback = (widekyc.WKYCResponse) -> Swift.Void
+@objc @_inheritsConvenienceInitializers public class WKYC : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  public static var sharedInstance: widekyc.WKYC
+  public var wkycConfig: widekyc.WKYCConfig
+  public var wkycID: widekyc.WKYCID
+  public var clientConfig: widekyc.ClientConfig
+  public func start(request: widekyc.WKYCRequest, completeCallback: widekyc.wkycCallback? = nil, interruptCallback: widekyc.wkycCallback? = nil, cancelCallback: widekyc.wkycCallback? = nil) throws
+  public func getMetaInfo() -> [Swift.String : Any]
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class ImageUtils : ObjectiveC.NSObject {
+  public static func isPhotoColored(image: UIKit.UIImage) -> Swift.Bool
+  public static func colorDistance(a: UIKit.UIColor, b: widekyc.Pixel) -> Swift.Double
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class WKYCConstants : ObjectiveC.NSObject {
+  public static var LOCALE: Swift.String
+  public static var PROCESSED_IMAGE_PATH: Swift.String
+  public static var UI_CONFIG_PATH: Swift.String
+  public static var LANG_EN: Swift.String
+  public static var LANG_ID: Swift.String
+  public static var PASSIVE_LIVENESS: Swift.String
+  public static var ID_RECOGNIZE: Swift.String
+  public static var ID_VALIDATION: Swift.String
+  public static var ID_RECOGNIZE_ZOLOZ: Swift.String
+  public static var REAL_ID_ZOLOZ: Swift.String
+  public static var FACE_CAPTURE_ZOLOZ: Swift.String
+  public static var REAL_ID: Swift.String
+  public static var SL_PASSIVE_LIVENESS_MED: Swift.String
+  public static var SL_PASSIVE_LIVENESS_ADV: Swift.String
+  public static var SL_ID_VALIDATION_UI: Swift.String
+  public static var SL_ID_VALIDATION_API: Swift.String
+  public static var SL_ID_RECOGNIZE_ENT: Swift.String
+  public static var SL_ID_RECOGNIZE_MED: Swift.String
+  public static var SL_ID_RECOGNIZE_ADV: Swift.String
+  public static var PRODUCT: Swift.String
+  public static var TRX_ID: Swift.String
+  public static var META_INFO: Swift.String
+  public static var SERVICE_LEVEL: Swift.String
+  public static var ID_NIK: Swift.String
+  public static var ID_NAME: Swift.String
+  public static var ID_BIRTHDATE: Swift.String
+  public static var ID_BIRTHPLACE: Swift.String
+  public static var ID_ADDRESS: Swift.String
+  public static var ID_MOTHER_NAME: Swift.String
+  public static var ID_IMAGE: Swift.String
+  public static var FACE_CAPTURE_IMAGE: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class WKYCID : ObjectiveC.NSObject {
+  public var nik: Swift.String?
+  public var name: Swift.String?
+  public var birthdate: Swift.String?
+  public var birthplace: Swift.String?
+  public var address: Swift.String?
+  public var faceCaptureImage: Swift.String?
+  public func toString() -> Swift.String?
+  public func getParams() -> [Swift.String : Any]
+  public func getBasicInformation() -> [Swift.String : Any]
+  @objc override dynamic public init()
+  @objc deinit
+}
+public class WKYCResponse {
+  public init()
+  public var status: Swift.String?
+  public var message: Swift.String?
+  public var data: [Swift.String : Any]
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class ClientConfig : ObjectiveC.NSObject {
+  public var clientConfig: Foundation.NSMutableDictionary
+  public var color: Foundation.NSDictionary
+  public var image: Foundation.NSDictionary
+  public var langEN: Foundation.NSDictionary
+  public var langID: Foundation.NSDictionary
+  @objc override dynamic public init()
+  public func getColor() -> Foundation.NSDictionary
+  public func getImage() -> Foundation.NSDictionary
+  public func getLangEN() -> Foundation.NSDictionary
+  public func getLangID() -> Foundation.NSDictionary
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class WKYCRequest : ObjectiveC.NSObject {
+  public var wkycConfig: widekyc.WKYCConfig
+  public var clientConfig: widekyc.ClientConfig
+  public var wkycID: widekyc.WKYCID
+  public func WKYCRequest()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public class WKYCConfig {
+  public init()
+  public var trxId: Swift.String?
+  public var zoloz: Swift.String?
+  public var product: Swift.String?
+  public var serviceLevel: Swift.String?
+  public var gatewayUrl: Swift.String?
+  @objc deinit
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public var iPhone5: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var iPhone7: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var iPhone7plus: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var iPhoneX: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var iPhoneXSMax: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var iPhoneXR: Swift.Bool {
+    get
+  }
+}
