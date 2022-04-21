@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "KYCWIDE"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "A short description of sdkDemo."
 
 
@@ -46,7 +46,7 @@ Pod::Spec.new do |s|
    s.libraries = 'c++', 'z'
    s.platform          = :ios, '11.0'
 
-  #s.vendored_frameworks = 'widekyc.framework'
+  s.vendored_frameworks = 'widekyc.framework'
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
