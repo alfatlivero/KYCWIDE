@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "KYCWIDE"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "A short description of sdkDemo."
 
 
@@ -27,13 +27,14 @@ Pod::Spec.new do |s|
     s.homepage         = 'https://github.com/alfatlivero/KYCWIDE.git'
     s.license          = { :type => "MIT" }
     s.author           = { 'alfatlivero' => 'alfatlivero27@gmail.com' }
-    s.source           = { :git => 'https://github.com/alfatlivero/KYCWIDE.git', :tag => s.version.to_s}
+
+    s.source = { :http => 'https://github.com/wide-mobile/widekyc/raw/main/widekyc.framework.zip' }
         
     s.ios.deployment_target = '11.0'
     s.swift_version = '5.0'
 
-    s.preserve_paths  = 'sdkDemo'
-    s.resources  = 'sdkDemo/**/*.{swift}'
+    #s.preserve_paths  = 'widekyc.framework'
+    #s.resources  = 'sdkDemo/**/*.{swift}'
     
     s.frameworks = 'CoreTelephony', 'Foundation', 'SystemConfiguration'
     s.static_framework = true
@@ -41,7 +42,9 @@ Pod::Spec.new do |s|
    s.libraries = 'c++', 'z'
    s.platform          = :ios, '11.0'
 
-  vendored_frameworks = 'widekyc.framework'
+ s.vendored_frameworks = 'widekyc.framework'
+ s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+ s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
  s.dependency 'SwiftyJSON'
  s.dependency 'SVProgressHUD'

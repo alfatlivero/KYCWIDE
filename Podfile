@@ -9,6 +9,7 @@ target 'sdkDemo' do
   # Pods for sdkDemo
     pod 'SwiftyJSON'
     pod 'SVProgressHUD'
+
     #pod 'GoogleMLKit/TextRecognition', '2.2.0'
     #pod 'GoogleMLKit/FaceDetection'
 end
