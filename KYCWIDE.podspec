@@ -1,3 +1,5 @@
+
+   
 #
 #  Be sure to run `pod spec lint sdkDemo.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
@@ -49,9 +51,11 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'widekyc.framework'
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-
+ 
  s.dependency 'SwiftyJSON'
  s.dependency 'SVProgressHUD'
+ s.dependency 'GoogleMLKit/TextRecognition', '2.2.0'
+ s.dependency 'GoogleMLKit/FaceDetection'
 
 # Your XCFramework
 end
